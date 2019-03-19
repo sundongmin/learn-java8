@@ -25,4 +25,16 @@ public class SumOfListDemo {
         sum = list.parallelStream().reduce(0, (output, ob) -> output + ob.getLength(), (a, b) -> a + b);
         System.out.println(sum);
     }
+
+    static class Line {
+        private int length;
+
+        public Line(int length) {
+            this.length = length;
+        }
+
+        public int getLength() {
+            return length;
+        }
+    }
 }

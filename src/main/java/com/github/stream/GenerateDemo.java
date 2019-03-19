@@ -7,4 +7,18 @@ public class GenerateDemo {
         Item item = new Item("AA");
         Stream.generate(item::getName).forEach(System.out::println);
     }
+
+    static class Item {
+
+        private String name;
+
+        public Item(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
 }
