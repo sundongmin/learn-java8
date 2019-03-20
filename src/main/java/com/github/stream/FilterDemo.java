@@ -1,5 +1,6 @@
 package com.github.stream;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilterDemo {
@@ -8,4 +9,25 @@ public class FilterDemo {
         list.stream().filter(e -> e.id > 1 && e.sal < 6000).forEach(System.out::println);
     }
 
+    static class Employee {
+
+        public int id;
+        public String name;
+        public int sal;
+
+        public Employee(int id, String name, int sal) {
+            this.id = id;
+            this.name = name;
+            this.sal = sal;
+        }
+
+        public static List<Employee> getEmpList() {
+            List<Employee> list = new ArrayList<>();
+            list.add(new Employee(1, "A", 2000));
+            list.add(new Employee(2, "B", 3000));
+            list.add(new Employee(3, "C", 4000));
+            list.add(new Employee(4, "D", 5000));
+            return list;
+        }
+    }
 }
