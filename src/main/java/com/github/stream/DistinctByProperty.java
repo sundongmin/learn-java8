@@ -3,6 +3,7 @@ package com.github.stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -20,8 +21,10 @@ public class DistinctByProperty {
     }
 
     private static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
-        Map<Object, Boolean> seen = new ConcurrentHashMap<>(10);
-        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+        //Map<Object, Boolean> seen = new ConcurrentHashMap<>(10);
+        //return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> seen.add(keyExtractor.apply(t));
     }
 
     static class Book {
