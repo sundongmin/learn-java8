@@ -9,9 +9,9 @@ public class SortedDemo2 {
 
         List<Book> list = Arrays.asList(null, new Book(null), new Book(3L), new Book(4L));
 
-        list.sort(Comparator.comparing((Book book) -> book.getNum()).reversed());
-
         list.sort(Comparator.nullsLast(Comparator.comparing(Book::getNum, Comparator.nullsFirst(Long::compareTo)).reversed()));
+
+        list.sort(Comparator.comparing((Book book) -> book.getNum()).reversed());
 
         list.forEach(System.out::println);
     }
