@@ -33,12 +33,12 @@ public class FlatMapWithArrayOfObject {
         private int price;
         private String name;
 
-        public Book(int price, String name) {
+        Book(int price, String name) {
             this.price = price;
             this.name = name;
         }
 
-        public int getPrice() {
+        int getPrice() {
             return price;
         }
 
@@ -59,7 +59,7 @@ public class FlatMapWithArrayOfObject {
         private String name;
         private List<Book> books;
 
-        public Writer(String name, List<Book> books) {
+        Writer(String name, List<Book> books) {
             this.name = name;
             this.books = books;
         }
@@ -72,7 +72,7 @@ public class FlatMapWithArrayOfObject {
             this.name = name;
         }
 
-        public List<Book> getBooks() {
+        List<Book> getBooks() {
             return books;
         }
 
