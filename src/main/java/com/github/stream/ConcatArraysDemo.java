@@ -19,7 +19,7 @@ public class ConcatArraysDemo {
             System.out.println(b.getName() + ", " + b.getPrice());
         }
 
-        //Remove duplicates using distinct()
+        // Remove duplicates using distinct()
         System.out.println("--Remove duplicates using distinct()--");
         bks = Stream.concat(Stream.of(bk1), Stream.of(bk2)).distinct().toArray(Book[]::new);
         for (Book b : bks) {
